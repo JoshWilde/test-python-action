@@ -1,0 +1,20 @@
+name: Run a Python script
+description: Empty Github Action template running a simple Python script
+inputs:
+  paper_path:
+    description: Path to a pdf file
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Install Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+      run: pip install -r requirements.txt
+    - name: Run Python script
+      env:
+        PAPER_PATH: ${{ inputs.paper_path }}
+      run: |
+        python test.py
