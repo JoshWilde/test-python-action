@@ -27,6 +27,9 @@ os.system(f"echo '🎉 All imports OK'")
 paper_path = os.environ['PAPER_PATH']
 os.system(f"echo '📄 PDF file located here: {paper_path}'")
 
+os.system('python -m spacy download en_core_web_lg')
+model = spacy.load('en_core_web_lg')
+
 paper_path = 'paper.pdf'
 #POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
 
@@ -111,7 +114,7 @@ top20_tf = Get_Top_Words_tf(paper_path)
 #        top20_tf = X[:num_top20,0] # Saves the top N words as a list
 print(top20_tf)    
 
-"""
+
 def Generate_Paper_Vector(Paper_interest, model, num_top20=20):
     ''' 
     Parameters
@@ -182,4 +185,11 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
         Paper_Dict[paper_list[k][-9:-4]] = paper_vector # Adds this vector to the dictionary
         Paper_20_Dict[paper_list[k][-9:-4]] = doc_top20 # Adds the top N words to the dictionary
     return Paper_Dict, Paper_20_Dict
-"""
+
+# Paper Cosine
+
+
+Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
+
+print(Paper_Dict)
+print(Paper_20_Dict)
