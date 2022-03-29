@@ -4,3 +4,4 @@ pdfminer
 sklearn
 spacy
 pdfplumber
+PyPDF2
