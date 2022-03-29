@@ -30,7 +30,7 @@ os.system(f"echo '📄 PDF file located here: {paper_path}'")
 os.system('python -m spacy download en_core_web_lg')
 model = spacy.load('en_core_web_lg')
 
-paper_path = ['paper.pdf']
+paper_path = 'paper.pdf'
 #POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
 
 def Get_Lemma_Words(POI_PDF):
@@ -188,8 +188,8 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
 
 # Paper Cosine
 
+paper_vector, doc_top20 = Generate_Paper_Vector(Paper_interest, model)
+#Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
 
-Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
-
-print(Paper_Dict)
-print(Paper_20_Dict)
+print(paper_vector)
+print(doc_top20)
