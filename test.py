@@ -3,6 +3,7 @@ import glob
 import sklearn
 import pdfminer
 import nltk
+import spacy
 import os
 os.system(f"echo '🎉 All imports OK'")
 
