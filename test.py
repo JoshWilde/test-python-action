@@ -1,6 +1,7 @@
 import numpy as np
 import glob
 import sklearn
+import pdfminer
 import os
 os.system(f"echo '🎉 All imports OK'")
 
