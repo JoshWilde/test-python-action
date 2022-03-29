@@ -30,7 +30,7 @@ os.system(f"echo '📄 PDF file located here: {paper_path}'")
 os.system('python -m spacy download en_core_web_lg')
 model = spacy.load('en_core_web_lg')
 
-paper_path = 'paper.pdf'
+paper_path = ['paper.pdf']
 #POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
 
 def Get_Lemma_Words(POI_PDF):
