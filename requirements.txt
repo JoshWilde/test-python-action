@@ -6,4 +6,3 @@ spacy
 pdfplumber
 PyPDF2
 click==8.0.4
-en_core_web_lg
