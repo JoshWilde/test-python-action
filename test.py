@@ -1,6 +1,6 @@
 import numpy as np
 import glob
-import spacy
+#import spacy
 import nltk
 import pdfminer
 import sklearn
