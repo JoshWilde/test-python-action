@@ -17,6 +17,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 nltk.download('stopwords')
 nltk.download('punkt')
+nltk.download('wordnet')
 
 #import spacy
 import os
