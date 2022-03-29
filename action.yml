@@ -9,7 +9,7 @@ runs:
   steps:
     - uses: actions/checkout@v3
       with:
-        repository: xuanxu/test-python-action
+        repository: JoshWilde/test-python-action
     - name: Install Python
       uses: actions/setup-python@v3
       with:
