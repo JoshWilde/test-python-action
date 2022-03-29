@@ -1,6 +1,6 @@
 import numpy as np
 import glob
-!pip install spacy
+
 import spacy
 import os
 os.system(f"echo '🎉 All imports OK'")
