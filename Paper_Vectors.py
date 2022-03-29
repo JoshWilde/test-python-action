@@ -180,7 +180,7 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
     Paper_Dict = {}  # Defines an empty dictionary
     Paper_20_Dict = {}  # Defines an empty dictionary
     #for k in range(len(paper_list)): # For each paper
-    print(paper_list[k]+ ' - ' +str(k))
+    #print(paper_list[k]+ ' - ' +str(k))
     paper_vector, doc_top20 = Generate_Paper_Vector(paper_list, model, num_top20) # Generates paper vector and shows the top N words
     Paper_Dict[paper_list[k][-9:-4]] = paper_vector # Adds this vector to the dictionary
     Paper_20_Dict[paper_list[k][-9:-4]] = doc_top20 # Adds the top N words to the dictionary
