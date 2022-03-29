@@ -16,6 +16,7 @@ from nltk.probability import FreqDist
 from sklearn.metrics.pairwise import cosine_similarity
 
 nltk.download('stopwords')
+nltk.download('punkt')
 
 #import spacy
 import os
