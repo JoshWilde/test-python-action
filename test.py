@@ -1,9 +1,10 @@
 import numpy as np
 import glob
+
 #import spacy
-import nltk
-import pdfminer
-import sklearn
+#import nltk
+#import pdfminer
+#import sklearn
 
 import os
 os.system(f"echo '🎉 All imports OK'")
