@@ -28,7 +28,7 @@ paper_path = os.environ['PAPER_PATH']
 os.system(f"echo '📄 PDF file located here: {paper_path}'")
 
 paper_path = 'paper.pdf'
-POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
+#POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
 
 def Get_Lemma_Words(POI_PDF):
     ''' 
@@ -70,10 +70,43 @@ def Get_Lemma_Words(POI_PDF):
     words = word_tokenize(lemmatized_words_arr) # Tokenises each word in the text
     return words
 
-words = Get_Lemma_Words(POI_PDF) # Lemmanises words from the extracted text
-top20_tf = -2 # If there are no lemmanised words, this function will output this value
-if len(words) > 0: # If there are lemmanised words
+
+
+def Get_Top_Words_tf(Paper_interest, df=1, num_top20=20):
+    ''' 
+    Parameters
+    ----------
+        Paper_interest : string
+            File path to the location of the PDF 
+            
+        df : 
+            A
+            
+        num_top20 : Int
+            Number of most frequent words that are used for calculating the vector of the paper
+            
+    Returns
+    ----------
+        top20_tf : array_like
+            Array of the most frequent words from the paper in order
+    ''' 
+    POI_PDF = [extract_text(Paper_interest)] # Extracts text from the PDF file
+    #text = str(POI_PDF)
+    words =  Get_Lemma_Words(POI_PDF) # Lemmanises words from the extracted text
+    top20_tf = -2 # If there are no lemmanised words, this function will output this value
+    if len(words) > 0: # If there are lemmanised words
         fdist = FreqDist(words) # Calculates the frequency for each lemmanised word in the text
         X = np.array(fdist.most_common()) # Sorts the words in order of frequency
         top20_tf = X[:num_top20,0] # Saves the top N words as a list
+
+    return top20_tf
+
+top20_tf = Get_Top_Words_tf(paper_path)
+
+#words = Get_Lemma_Words(POI_PDF) # Lemmanises words from the extracted text
+#top20_tf = -2 # If there are no lemmanised words, this function will output this value
+#if len(words) > 0: # If there are lemmanised words
+#        fdist = FreqDist(words) # Calculates the frequency for each lemmanised word in the text
+#        X = np.array(fdist.most_common()) # Sorts the words in order of frequency
+#        top20_tf = X[:num_top20,0] # Saves the top N words as a list
 print(top20_tf)    
