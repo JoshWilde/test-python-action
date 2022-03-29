@@ -15,6 +15,8 @@ from nltk.stem import WordNetLemmatizer
 from nltk.probability import FreqDist
 from sklearn.metrics.pairwise import cosine_similarity
 
+nltk.download('stopwords')
+
 #import spacy
 import os
 os.system(f"echo '🎉 All imports OK'")
