@@ -29,4 +29,4 @@ jobs:
       - name: Test Python
         uses: JoshWilde/test-python-action@main
         with:
-          paper_path: ${{ inputs.repository_url }} #${{ steps.generate-files.outputs.pdf_path}}
+          paper_path: ${{ github.event.inputs.repository_url }} #${{ steps.generate-files.outputs.pdf_path}}
