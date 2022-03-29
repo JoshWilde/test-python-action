@@ -188,8 +188,11 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
 
 # Paper Cosine
 
-paper_vector, doc_top20 = Generate_Paper_Vector(paper_path , model)
-#Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
+#paper_vector, doc_top20 = Generate_Paper_Vector(paper_path , model)
+#print(paper_vector)
+#print(doc_top20)
+paper_path = ['paper.pdf', 'paper.pdf', 'paper.pdf']
+Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
 
-print(paper_vector)
-print(doc_top20)
+print(Paper_Dict)
+print(Paper_20_Dict)
