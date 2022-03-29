@@ -71,5 +71,9 @@ def Get_Lemma_Words(POI_PDF):
     return words
 
 words = Get_Lemma_Words(POI_PDF) # Lemmanises words from the extracted text
-fdist = FreqDist(words) # Calculates the frequency for each lemmanised word in the text
-print(fdist)    
+top20_tf = -2 # If there are no lemmanised words, this function will output this value
+if len(words) > 0: # If there are lemmanised words
+        fdist = FreqDist(words) # Calculates the frequency for each lemmanised word in the text
+        X = np.array(fdist.most_common()) # Sorts the words in order of frequency
+        top20_tf = X[:num_top20,0] # Saves the top N words as a list
+print(top20_tf)    
