@@ -3,6 +3,7 @@ import glob
 import sklearn
 import pdfminer
 import pdfplumber
+import PyPDF2
 import nltk
 #import spacy
 import os
