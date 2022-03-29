@@ -2,6 +2,7 @@ import numpy as np
 import glob
 import sklearn
 import pdfminer
+import pdfplumber
 import nltk
 #import spacy
 import os
