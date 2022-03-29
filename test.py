@@ -13,4 +13,5 @@ os.system(f"echo '🎉 All imports OK'")
 paper_path = os.environ['PAPER_PATH']
 os.system(f"echo '📄 PDF file located here: {paper_path}'")
 
+paper_path = 'paper.pdf'
 POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
