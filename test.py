@@ -2,6 +2,7 @@ import numpy as np
 import glob
 import sklearn
 import pdfminer
+import nltk
 import os
 os.system(f"echo '🎉 All imports OK'")
 
