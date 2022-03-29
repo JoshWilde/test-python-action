@@ -3,3 +3,4 @@ nltk
 pdfminer
 sklearn
 spacy
+pdfplumber
