@@ -27,6 +27,9 @@ os.system(f"echo '🎉 All imports OK'")
 paper_path = os.environ['PAPER_PATH']
 os.system(f"echo '📄 PDF file located here: {paper_path}'")
 
+os.system('python -m spacy download en_core_web_lg')
+model = spacy.load('en_core_web_lg')
+
 paper_path = 'paper.pdf'
 #POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
 
@@ -186,3 +189,5 @@ def Author_vectors_TF(folder_names, model, num_top20=20, directory_offset=21):
     return Author_Dict
   
 Author_Dict = Author_vectors_TF(folder_names, model)
+
+print(Author_Dict)
