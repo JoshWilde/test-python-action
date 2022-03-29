@@ -192,7 +192,7 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
 #print(paper_vector)
 #print(doc_top20)
 #paper_path = ['paper.pdf', 'paper.pdf', 'paper.pdf']
-paper_path = ['paper.pdf']
+
 Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
 
 print(Paper_Dict)
