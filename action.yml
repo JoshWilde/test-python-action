@@ -21,4 +21,4 @@ runs:
         PAPER_PATH: ${{ inputs.paper_path }}
       run: |
         pip install -r requirements.txt
-        python Paper_Vectors.py
+        python test.py
