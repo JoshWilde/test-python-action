@@ -262,7 +262,7 @@ author_keys = author_Dict.keys()
 author_vectors = author_Dict
 paper_vec = Paper_Dict[list(Paper_Dict)[0]]
 
-Paper_cosine(author_keys, author_vectors, Paper_Dict)
+Paper_cosine(author_keys, author_vectors, paper_vec)
 
 print('SUCCESS!!!')
 
