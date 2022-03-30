@@ -2,7 +2,7 @@ import numpy as np
 import glob
 
 import spacy
-
+import re
 import os
 os.system(f"echo '🎉 All imports OK'")
 
