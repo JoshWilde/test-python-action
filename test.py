@@ -8,6 +8,9 @@ os.system(f"echo '🎉 All imports OK'")
 
 glow = os.environ['GLOB_FOLDERS']
 print(glow)
+print('/n')
+glow_pdfs = os.environ['GLOB_PDFS']
+print(glow_pdfs)
 
 #fold_loc = 'https://github.com/JoshWilde/test-python-action/tree/main/Author_Folders/ctb'
 #print(fold_loc)
