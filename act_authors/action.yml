@@ -15,10 +15,18 @@ runs:
       with:
         python-version: '3.9'
         cache: 'pip'
+    - name: Glob Folders
+      uses: tj-actions/glob@v7.14
+      id: glob_folders
+      with:
+        files: |
+          *
+    
     - name: Run Python script
       shell: bash
       env:
         FOLDER_PATH: ${{ inputs.folder_path }}
+        GLOB_FOLDERS: ${{ steps.glob_folders.outputs.paths }}
       run: |
         pip install -r requirements.txt
         python test.py
