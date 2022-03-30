@@ -12,7 +12,7 @@ print('/n')
 pdfs = os.environ['GLOB_PDFS']
 print(pdfs)
 
-def Make_Folder_dict(pdf):
+def Make_Folder_dict(pdfs):
   Master_dict = {}
   for i in range(len(pdfs)):
     J = re.search('/', pdfs[i])
@@ -25,8 +25,19 @@ def Make_Folder_dict(pdf):
       Master_dict[Folder_name].append(pdf_name)
   return Master_dict
 
+def Author_vectors_TF(folder_names, num_top20=20):
+    Author_Dict = {} # Defines an empty dictionary
+    for i in range(len(list(folder_names))): # For each author
+      paper_list = folder_names[list(folder_names)[i]]
+        #average_vector = Reviewer_Paper_Vector(paper_list, model, num_top20) # Generates the average vector for all the papers in this folder
+        #Author_Dict[folder_names[k][directory_offset:]] = average_vector # Adds this average vector to the dictionary
+    #return Author_Dict
+    print('success minor!')
 
-
+Master_dict = Make_Folder_dict(pdfs)
+Author_vectors_TF(Master_dict)
+  
+  
 #fold_loc = 'https://github.com/JoshWilde/test-python-action/tree/main/Author_Folders/ctb'
 #print(fold_loc)
 
