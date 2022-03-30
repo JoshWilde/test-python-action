@@ -199,7 +199,7 @@ def Author_vectors_TF(folder_names, model, num_top20=20, directory_offset=21):
         Author_Dict[folder_names[i]] = average_vector # Adds this average vector to the dictionary
     return Author_Dict
     
-  def Make_Folder_dict(pdfs):
+def Make_Folder_dict(pdfs):
     Master_dict = {}
     for i in range(len(pdfs)):
      #print(pdfs[i])
