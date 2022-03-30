@@ -28,7 +28,7 @@ jobs:
       #    journal: test_journal
       - name: Check out repo
         uses: actions/checkout@v3
-          with: JoshWilde/test-python-action
+        with:
           ref: v1.0
           token: token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           path: ./.github/JoshWilde/test-python-action
