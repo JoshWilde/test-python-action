@@ -37,4 +37,4 @@ runs:
         GLOB_PDFS: ${{ steps.glob_PDFs.outputs.paths }}
       run: |
         pip install -r requirements.txt
-        python test.py
+        python Author_Papers.py
