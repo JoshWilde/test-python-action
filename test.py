@@ -6,7 +6,7 @@ import spacy
 import os
 os.system(f"echo '🎉 All imports OK'")
 
-fold_loc = 'https://github.com/JoshWilde/test-python-action/tree/main/Author_Folders'
+fold_loc = 'https://github.com/JoshWilde/test-python-action/tree/main/Author_Folders/ctb'
 print(fold_loc)
 
 folds = glob.glob(fold_loc)
