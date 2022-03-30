@@ -145,7 +145,7 @@ def Generate_Paper_Vector(Paper_interest, model, num_top20=20):
         
     ''' 
     #average_vector = np.zeros((300)) # Creates an array for 300 zeros
-    top20_tf = Get_Top_Words_tf(Paper_interest, num_top20) # Gets the top N Words
+    top20_tf = Get_Top_Words_tf(Paper_interest) # Gets the top N Words
     #print(top20_tf)
     doc_top20= '' # Creates empty string
     if top20_tf != -2: # If the paper has lemmanised words
@@ -181,7 +181,7 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
     Paper_20_Dict = {}  # Defines an empty dictionary
     #for k in range(len(paper_list)): # For each paper
     #print(paper_list[k]+ ' - ' +str(k))
-    paper_vector, doc_top20 = Generate_Paper_Vector(paper_list, model, num_top20) # Generates paper vector and shows the top N words
+    paper_vector, doc_top20 = Generate_Paper_Vector(paper_list, model) # Generates paper vector and shows the top N words
     Paper_Dict[paper_list[-9:-4]] = paper_vector # Adds this vector to the dictionary
     Paper_20_Dict[paper_list[-9:-4]] = doc_top20 # Adds the top N words to the dictionary
     #return Paper_Dict, Paper_20_Dict
