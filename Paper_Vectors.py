@@ -94,13 +94,19 @@ def Get_Top_Words_tf(Paper_interest, num_top20=20):
             Array of the most frequent words from the paper in order
     ''' 
     POI_PDF = [extract_text(Paper_interest)] # Extracts text from the PDF file
+    print('Extracted text')
     #text = str(POI_PDF)
     words =  Get_Lemma_Words(POI_PDF) # Lemmanises words from the extracted text
+    print('Get Lemma Words')
     top20_tf = -2 # If there are no lemmanised words, this function will output this value
+    print('Top20 TF')
     if len(words) > 0: # If there are lemmanised words
         fdist = FreqDist(words) # Calculates the frequency for each lemmanised word in the text
+        print('Freq Dist')
         X = np.array(fdist.most_common()) # Sorts the words in order of frequency
+        print('X')
         top20_tf = X[:num_top20,0] # Saves the top N words as a list
+        print('Top20 TF')
 
     return top20_tf
 
@@ -145,6 +151,7 @@ def Generate_Paper_Vector(Paper_interest, model, num_top20=20):
         
     ''' 
     #average_vector = np.zeros((300)) # Creates an array for 300 zeros
+    print('Starting Top Words TF')
     top20_tf = Get_Top_Words_tf(Paper_interest) # Gets the top N Words
     #print(top20_tf)
     doc_top20= '' # Creates empty string
@@ -181,6 +188,7 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
     Paper_20_Dict = {}  # Defines an empty dictionary
     #for k in range(len(paper_list)): # For each paper
     #print(paper_list[k]+ ' - ' +str(k))
+    print('Starting Generate Paper Vectors')
     paper_vector, doc_top20 = Generate_Paper_Vector(paper_list, model) # Generates paper vector and shows the top N words
     Paper_Dict[paper_list[-9:-4]] = paper_vector # Adds this vector to the dictionary
     Paper_20_Dict[paper_list[-9:-4]] = doc_top20 # Adds the top N words to the dictionary
@@ -193,6 +201,7 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
 #print(doc_top20)
 #paper_path = ['paper.pdf', 'paper.pdf', 'paper.pdf']
 
+print('Starting Paper Vectors TF')
 Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
 
 print(Paper_Dict)
