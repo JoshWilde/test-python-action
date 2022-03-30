@@ -6,7 +6,6 @@ import spacy
 import os
 os.system(f"echo '🎉 All imports OK'")
 
-GLOB_FOLDERS
 glow = os.environ['GLOB_FOLDERS']
 print(glow)
 
