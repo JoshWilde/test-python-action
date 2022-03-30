@@ -5,6 +5,7 @@ import pdfminer
 import pdfplumber
 import PyPDF2
 import nltk
+import spacy
 
 from nltk import word_tokenize
 from nltk import download
