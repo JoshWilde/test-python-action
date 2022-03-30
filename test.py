@@ -12,6 +12,8 @@ print('/n')
 pdfs = os.environ['GLOB_PDFS']
 print(pdfs)
 
+pdfs = pdfs.split(' ')
+
 def Make_Folder_dict(pdfs):
   Master_dict = {}
   for i in range(len(pdfs)):
