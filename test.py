@@ -15,6 +15,7 @@ print(pdfs)
 def Make_Folder_dict(pdfs):
   Master_dict = {}
   for i in range(len(pdfs)):
+    print(pdfs[i])
     J = re.search('/', pdfs[i])
     K = re.search('/',pdfs[i][J.end():])
     Folder_name = pdfs[i][J.end():J.end()+K.start()]
