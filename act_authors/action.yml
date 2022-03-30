@@ -20,6 +20,13 @@ runs:
       id: glob_folders
       with:
         files: |
+          */*
+          
+    - name: Glob PDFs
+      uses: tj-actions/glob@v7.14
+      id: glob_PDFs
+      with:
+        files: |
           */*/*.pdf
     
     - name: Run Python script
@@ -27,6 +34,7 @@ runs:
       env:
         FOLDER_PATH: ${{ inputs.folder_path }}
         GLOB_FOLDERS: ${{ steps.glob_folders.outputs.paths }}
+        GLOB_PDFS: ${{ steps.glob_PDFs.outputs.paths }}
       run: |
         pip install -r requirements.txt
         python test.py
