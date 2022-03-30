@@ -29,7 +29,7 @@ os.system(f"echo '🎉 All imports OK'")
 
 
 folder_names = os.environ['FOLDER_PATH']
-os.system(f"echo '📄 PDF file located here: {folder_names}'"
+os.system(f"echo '📄 PDF file located here: {folder_names}'")
 
 os.system('python -m spacy download en_core_web_lg')
 model = spacy.load('en_core_web_lg')
@@ -195,3 +195,5 @@ def Author_vectors_TF(folder_names, model, num_top20=20, directory_offset=21):
 Author_Dict = Author_vectors_TF(folder_names, model)
 
 print(Author_Dict)
+np.save('Author_Dict_generated.npy', Author_Dict)
+print('SUCCESS!!!')
