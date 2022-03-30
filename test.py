@@ -9,8 +9,23 @@ os.system(f"echo '🎉 All imports OK'")
 glow = os.environ['GLOB_FOLDERS']
 print(glow)
 print('/n')
-glow_pdfs = os.environ['GLOB_PDFS']
-print(glow_pdfs)
+pdfs = os.environ['GLOB_PDFS']
+print(pdfs)
+
+def Make_Folder_dict(pdf):
+  Master_dict = {}
+  for i in range(len(pdfs)):
+    J = re.search('/', pdfs[i])
+    K = re.search('/',pdfs[i][J.end():])
+    Folder_name = pdfs[i][J.end():J.end()+K.start()]
+    pdf_name = pdfs[i]#[J.end()+K.end():]
+    if Folder_name not in Master_dict:
+      Master_dict[Folder_name] = [pdf_name]
+    else:
+      Master_dict[Folder_name].append(pdf_name)
+  return Master_dict
+
+
 
 #fold_loc = 'https://github.com/JoshWilde/test-python-action/tree/main/Author_Folders/ctb'
 #print(fold_loc)
