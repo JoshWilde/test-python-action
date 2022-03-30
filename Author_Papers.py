@@ -193,6 +193,8 @@ def Author_vectors_TF(folder_names, model, num_top20=20, directory_offset=21):
         Author_Dict[folder_names[k][directory_offset:]] = average_vector # Adds this average vector to the dictionary
     return Author_Dict
   
+print('folder names')
+print(folder_names)
 Author_Dict = Author_vectors_TF(folder_names, model)
 
 print(Author_Dict)
