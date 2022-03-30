@@ -21,4 +21,4 @@ runs:
         FOLDER_PATH: ${{ inputs.folder_path }}
       run: |
         pip install -r requirements.txt
-        python Author_Papers.py
+        python test.py
