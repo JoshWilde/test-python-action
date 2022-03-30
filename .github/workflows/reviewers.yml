@@ -26,6 +26,8 @@ jobs:
       #    branch: ${{ github.event.inputs.branch }}
       #    issue_id: ${{ github.event.inputs.issue_id }}
       #    journal: test_journal
+      - name: check out repo
+        uses: JoshWilde/test-python-action/checkout@v2
       - name: Test Python
         uses: ./.github/JoshWilde/test-python-action/action #@main
         with:
