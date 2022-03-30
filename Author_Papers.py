@@ -24,13 +24,17 @@ nltk.download('omw-1.4')
 import os
 os.system(f"echo '🎉 All imports OK'")
 
-paper_path = os.environ['PAPER_PATH']
-os.system(f"echo '📄 PDF file located here: {paper_path}'")
+#paper_path = os.environ['PAPER_PATH']
+#os.system(f"echo '📄 PDF file located here: {paper_path}'")
+
+
+folder_names = os.environ['FOLDER_PATH']
+os.system(f"echo '📄 PDF file located here: {folder_names}'"
 
 os.system('python -m spacy download en_core_web_lg')
 model = spacy.load('en_core_web_lg')
 
-paper_path = 'paper.pdf'
+#paper_path = 'paper.pdf'
 #POI_PDF = [extract_text(paper_path)] # Extracts text from the PDF file
 
 def Get_Lemma_Words(POI_PDF):
