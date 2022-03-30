@@ -200,6 +200,50 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
     return Paper_Dict, Paper_20_Dict
 
 # Paper Cosine
+def Paper_cosine(author_keys, author_vectors, paper_vec, N=5, printer=True):
+    ''' 
+    Parameters
+    ----------
+        author_keys : Dictionary Keys
+            A
+            
+        author_vectors : Dictionary
+            A
+             
+        paper_vec : array-like
+            A
+            
+        N : int
+            Number of reviewers suggested 
+            
+        printer : Boolean
+            A
+            
+    Returns
+    ----------
+        cos_sim_dict : dictionary
+            A
+    ''' 
+    cos_sim_list = [] # Creates an empty list
+    for i in range(len(author_keys)): # For each author key
+        idx = list(author_keys)[i] # Creates an index
+        author_vec = author_vectors[idx] # Loads the vector for the given author key
+    
+        cos_sim = cosine_similarity(np.array([paper_vec]), np.array([author_vec]))[0,0] # Calculates the cosine similarity 
+        # of the paper and the author of the index
+        cos_sim_list.append(cos_sim) # appends cosine similarity to a list of all cosine similarities for each author for 
+        # this one paper
+    cos_sim_list = np.array(cos_sim_list) # Converts list to numpy array
+
+    cos_sim_dict = {} # Creates an empty dictionary
+    sorted_idx = np.argsort(cos_sim_list)[-N:] # Sorts list and selects the top N highest scoring authors
+    for i in range(N): # for each of the top N authors
+        idx = sorted_idx[-i-1] # Creates an index
+        doi = list(author_vectors)[idx] #Finds the author key for the high scoring cosine similarties
+        if printer == True:
+            print(doi + ' - ' + str(cos_sim_list[idx])[:6]) # Prints author key & cosine similarity for that author to the given paper
+        cos_sim_dict[doi] = cos_sim_list[idx] # Adds the author key & cosine similarity to a dictionary
+    #return cos_sim_dict
 
 #paper_vector, doc_top20 = Generate_Paper_Vector(paper_path , model)
 #print(paper_vector)
@@ -208,6 +252,13 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
 
 print('Starting Paper Vectors TF')
 Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
+
+author_Dict = np.load('Reviewers_Idea3_TF_Dict.npy', allow_pickle=True).item()
+author_keys = author_Dict.keys()
+author_vectors = author_Dict
+paper_vec = Paper_Dict[list(Paper_Dict)[0]]
+
+Paper_cosine(author_keys, author_vectors, Paper_Dict)
 
 print('SUCCESS!!!')
 
