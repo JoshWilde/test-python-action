@@ -26,9 +26,8 @@ jobs:
       #    branch: ${{ github.event.inputs.branch }}
       #    issue_id: ${{ github.event.inputs.issue_id }}
       #    journal: test_journal
-      - name: check out repo
-        uses: JoshWilde/test-python-action/checkout@main
       - name: Test Python
-        uses: ./.github/JoshWilde/test-python-action/action #@main
+        #uses: ./.github/JoshWilde/test-python-action/action #@main
+        uses: JoshWilde/test-python-action@main
         with:
           paper_path: ${{ github.event.inputs.repository_url }} #${{ steps.generate-files.outputs.pdf_path}} #${{ github.event.inputs.repository_url }}
