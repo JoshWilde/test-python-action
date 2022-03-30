@@ -110,7 +110,7 @@ def Get_Top_Words_tf(Paper_interest, num_top20=20):
 
     return top20_tf
 
-top20_tf = Get_Top_Words_tf(paper_path)
+#top20_tf = Get_Top_Words_tf(paper_path)
 
 #words = Get_Lemma_Words(POI_PDF) # Lemmanises words from the extracted text
 #top20_tf = -2 # If there are no lemmanised words, this function will output this value
@@ -118,7 +118,7 @@ top20_tf = Get_Top_Words_tf(paper_path)
 #        fdist = FreqDist(words) # Calculates the frequency for each lemmanised word in the text
 #        X = np.array(fdist.most_common()) # Sorts the words in order of frequency
 #        top20_tf = X[:num_top20,0] # Saves the top N words as a list
-print(top20_tf)    
+#print(top20_tf)    
 
 
 def Generate_Paper_Vector(Paper_interest, model, num_top20=20):
@@ -153,6 +153,7 @@ def Generate_Paper_Vector(Paper_interest, model, num_top20=20):
     #average_vector = np.zeros((300)) # Creates an array for 300 zeros
     print('Starting Top Words TF')
     top20_tf = Get_Top_Words_tf(Paper_interest) # Gets the top N Words
+    print(top20_tf)
     #print(top20_tf)
     doc_top20= '' # Creates empty string
     if top20_tf != -2: # If the paper has lemmanised words
@@ -190,6 +191,8 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
     #print(paper_list[k]+ ' - ' +str(k))
     print('Starting Generate Paper Vectors')
     paper_vector, doc_top20 = Generate_Paper_Vector(paper_list, model) # Generates paper vector and shows the top N words
+    print(paper_vector)
+    print(doc_top20)
     Paper_Dict[paper_list[-9:-4]] = paper_vector # Adds this vector to the dictionary
     Paper_20_Dict[paper_list[-9:-4]] = doc_top20 # Adds the top N words to the dictionary
     #return Paper_Dict, Paper_20_Dict
