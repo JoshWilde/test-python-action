@@ -254,7 +254,7 @@ def Paper_cosine(author_keys, author_vectors, paper_vec, N=5, printer=True):
 #print(doc_top20)
 #paper_path = ['paper.pdf', 'paper.pdf', 'paper.pdf']
 
-print('Starting Paper Vectors TF')
+#print('Starting Paper Vectors TF')
 Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
 
 author_Dict = np.load('Reviewers_Idea3_TF_Dict.npy', allow_pickle=True).item()
@@ -262,7 +262,8 @@ author_keys = author_Dict.keys()
 author_vectors = author_Dict
 paper_vec = Paper_Dict[list(Paper_Dict)[0]]
 
+print('Suggested Reviewers')
 Paper_cosine(author_keys, author_vectors, paper_vec)
 
-print('SUCCESS!!!')
+#print('SUCCESS!!!')
 
