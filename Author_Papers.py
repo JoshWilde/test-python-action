@@ -147,7 +147,7 @@ def Reviewer_Paper_Vector(paper_list, model, num_top20=20):
     mod = 0 # Keeps track of papers that do not add information to the average_vector
     for i in range(len(paper_list)): # For each paper in the list
         Paper_interest = paper_list[i] # Gets a paper path
-        print(Paper_interest)
+        #print(Paper_interest)
         top20_tf = Get_Top_Words_tf(Paper_interest, num_top20) # Generates the top N words for a paper
         doc_top20= ''  # Creates empty string
         if top20_tf != -2: # If the paper has lemmanised words
@@ -214,12 +214,13 @@ def Make_Folder_dict(pdfs):
       Master_dict[Folder_name].append(pdf_name)
     return Master_dict
 
-print('folder names')
+#print('folder names')
 
 
 Master_dict = Make_Folder_dict(pdfs)
 Author_Dict = Author_vectors_TF(Master_dict, model)
 
+print('Author Dict')
 print(Author_Dict)
 np.save('Author_Dict_generated.npy', Author_Dict)
 print('SUCCESS!!!')
