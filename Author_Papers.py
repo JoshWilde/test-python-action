@@ -195,7 +195,7 @@ def Author_vectors_TF(folder_names, model, num_top20=20, directory_offset=21):
         paper_list = folder_names[list(folder_names)[i]]
         #print(folder_names[k][directory_offset:]+ ' - ' +str(k))
         #paper_list = glob.glob(folder_names[k]+'/*.pdf') # Finds all PDF files in this folder
-        print(paper_list)
+        #print(paper_list)
         average_vector = Reviewer_Paper_Vector(paper_list, model, num_top20) # Generates the average vector for all the papers in this folder
         Author_Dict[list(folder_names)[i]] = average_vector # Adds this average vector to the dictionary
     return Author_Dict
@@ -220,7 +220,7 @@ def Make_Folder_dict(pdfs):
 Master_dict = Make_Folder_dict(pdfs)
 Author_Dict = Author_vectors_TF(Master_dict, model)
 
-print('Author Dict')
-print(Author_Dict)
+#print('Author Dict')
+#print(Author_Dict)
 np.save('Author_Dict_generated.npy', Author_Dict)
-print('SUCCESS!!!')
+#print('SUCCESS!!!')
