@@ -15,6 +15,11 @@ print(folds)
 folds = glob.glob(fold_loc+'/*')
 print(folds)
 
+paper_path = os.environ['FOLDER_PATH']
+print(paper_path)
+
+glo = os.environ[glob.glob(paper_path+'/*')]
+print(glo)
 
 #paper_path = os.environ['PAPER_PATH']
 #os.system(f"echo '📄 PDF file located here: {paper_path}'")
