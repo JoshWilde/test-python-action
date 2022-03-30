@@ -27,6 +27,6 @@ jobs:
       #    issue_id: ${{ github.event.inputs.issue_id }}
       #    journal: test_journal
       - name: Test Python
-        uses: JoshWilde/test-python-action@main
+        uses: JoshWilde/test-python-action/act_authors@main
         with:
           paper_path: ${{ github.event.inputs.paper_location }} #${{ steps.generate-files.outputs.pdf_path}} #${{ github.event.inputs.repository_url }}
