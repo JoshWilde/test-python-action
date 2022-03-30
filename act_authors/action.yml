@@ -38,3 +38,11 @@ runs:
       run: |
         pip install -r requirements.txt
         python Author_Papers.py
+    - name: Push File to repo
+      rerun: |
+        git config --global user.name "JoshWilde"
+        git config --global user.email "jww258@open.ac.uk"
+        
+        git add Author_Dict_generated.npy
+        git commit -m "Added Author Dictionary"
+        git push
