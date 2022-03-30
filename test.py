@@ -6,20 +6,24 @@ import spacy
 import os
 os.system(f"echo '🎉 All imports OK'")
 
-fold_loc = 'https://github.com/JoshWilde/test-python-action/tree/main/Author_Folders/ctb'
-print(fold_loc)
+GLOB_FOLDERS
+glow = os.environ['GLOB_FOLDERS']
+print(glow)
 
-folds = glob.glob(fold_loc)
-print(folds)
+#fold_loc = 'https://github.com/JoshWilde/test-python-action/tree/main/Author_Folders/ctb'
+#print(fold_loc)
 
-folds = glob.glob(fold_loc+'/*')
-print(folds)
+#folds = glob.glob(fold_loc)
+#print(folds)
 
-paper_path = os.environ['FOLDER_PATH']
-print(paper_path)
+#folds = glob.glob(fold_loc+'/*')
+#print(folds)
 
-glo = os.environ[glob.glob(paper_path+'/*')]
-print(glo)
+#paper_path = os.environ['FOLDER_PATH']
+#print(paper_path)
+
+#glo = os.environ[glob.glob(paper_path+'/*')]
+#print(glo)
 
 #paper_path = os.environ['PAPER_PATH']
 #os.system(f"echo '📄 PDF file located here: {paper_path}'")
