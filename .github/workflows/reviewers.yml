@@ -32,7 +32,7 @@ jobs:
           repository: JoshWilde/test-python-action
           #ref: v1.0
           #token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          path: ./.github/JoshWilde/test-python-action
+          #path: ./.github/JoshWilde/test-python-action
           
       - name: Test Python
         #uses: ./.github/JoshWilde/test-python-action/action #@main
