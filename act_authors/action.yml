@@ -38,8 +38,7 @@ runs:
       run: |
         pip install -r requirements.txt
         python Author_Papers.py
-    - name: Push File to repo
-      run: |
+
         git config --global user.name "JoshWilde"
         git config --global user.email "jww258@open.ac.uk"
         
