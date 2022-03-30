@@ -1,8 +1,8 @@
 name: Run a Python script
 description: Empty Github Action template running a simple Python script
 inputs:
-  paper_path:
-    description: Path to a pdf file
+  folder_path:
+    description: Path to folders containing pdf files organised by author
     required: true
 runs:
   using: "composite"
@@ -18,7 +18,7 @@ runs:
     - name: Run Python script
       shell: bash
       env:
-        PAPER_PATH: ${{ inputs.paper_path }}
+        FOLDER_PATH: ${{ inputs.folder_path }}
       run: |
         pip install -r requirements.txt
         python Author_Papers.py
