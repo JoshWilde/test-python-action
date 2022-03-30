@@ -27,7 +27,7 @@ jobs:
       #    issue_id: ${{ github.event.inputs.issue_id }}
       #    journal: test_journal
       - name: Check out repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           repository: JoshWilde/test-python-action
           ref: v1.0
