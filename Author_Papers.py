@@ -147,6 +147,7 @@ def Reviewer_Paper_Vector(paper_list, model, num_top20=20):
     mod = 0 # Keeps track of papers that do not add information to the average_vector
     for i in range(len(paper_list)): # For each paper in the list
         Paper_interest = paper_list[i] # Gets a paper path
+        print(Paper_interest)
         top20_tf = Get_Top_Words_tf(Paper_interest, num_top20) # Generates the top N words for a paper
         doc_top20= ''  # Creates empty string
         if top20_tf != -2: # If the paper has lemmanised words
@@ -196,7 +197,7 @@ def Author_vectors_TF(folder_names, model, num_top20=20, directory_offset=21):
         #paper_list = glob.glob(folder_names[k]+'/*.pdf') # Finds all PDF files in this folder
         print(paper_list)
         average_vector = Reviewer_Paper_Vector(paper_list, model, num_top20) # Generates the average vector for all the papers in this folder
-        Author_Dict[folder_names[i]] = average_vector # Adds this average vector to the dictionary
+        Author_Dict[list(folder_names)[i]] = average_vector # Adds this average vector to the dictionary
     return Author_Dict
     
 def Make_Folder_dict(pdfs):
