@@ -195,6 +195,8 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
     print(doc_top20)
     Paper_Dict[paper_list] = paper_vector # Adds this vector to the dictionary
     Paper_20_Dict[paper_list] = doc_top20 # Adds the top N words to the dictionary
+    print(Paper_Dict)
+    print(Paper_20_Dict)
     #return Paper_Dict, Paper_20_Dict
 
 # Paper Cosine
@@ -207,5 +209,5 @@ def Paper_vectors_TF(paper_list, model,num_top20=20):
 print('Starting Paper Vectors TF')
 Paper_Dict, Paper_20_Dict = Paper_vectors_TF(paper_path, model)
 
-print(Paper_Dict)
-print(Paper_20_Dict)
+print('SUCCESS!!!')
+
