@@ -195,7 +195,8 @@ def Author_vectors_TF(folder_names, model, num_top20=20, directory_offset=21):
   
 print('folder names')
 print(folder_names)
-Author_Dict = Author_vectors_TF(folder_names, model)
+folds = glob.glob(folder_names+'/*')
+Author_Dict = Author_vectors_TF(folds, model)
 
 print(Author_Dict)
 np.save('Author_Dict_generated.npy', Author_Dict)
