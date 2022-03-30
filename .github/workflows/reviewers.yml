@@ -26,16 +26,17 @@ jobs:
       #    branch: ${{ github.event.inputs.branch }}
       #    issue_id: ${{ github.event.inputs.issue_id }}
       #    journal: test_journal
-      - name: Check out repo
-        uses: actions/checkout@v3
-        with:
-          repository: JoshWilde/test-python-action
+      #- name: Check out repo
+      #  uses: actions/checkout@v3
+      #  with:
+      #    repository: JoshWilde/test-python-action
           #ref: v1.0
           #token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           #path: ./.github/JoshWilde/test-python-action
           
       - name: Test Python
         #uses: ./.github/JoshWilde/test-python-action/action #@main
-        uses: ./.github/JoshWilde/test-python-action/action #JoshWilde/test-python-action@main
+        #uses: JoshWilde/test-python-action@main
+        uses: JoshWilde/test-python-action/act_reviewers@main
         with:
           paper_path: ${{ github.event.inputs.repository_url }} #${{ steps.generate-files.outputs.pdf_path}} #${{ github.event.inputs.repository_url }}
