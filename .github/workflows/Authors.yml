@@ -2,7 +2,7 @@ name: Author Vector Generation
 on:
   workflow_dispatch:
     inputs:
-      paper_location:
+      folder_location:
         description: 'Location of folders containing PDFs for each author'
         required: true
       #branch:
@@ -29,4 +29,4 @@ jobs:
       - name: Test Python
         uses: JoshWilde/test-python-action/act_authors@main
         with:
-          paper_path: ${{ github.event.inputs.paper_location }} #${{ steps.generate-files.outputs.pdf_path}} #${{ github.event.inputs.repository_url }}
+          folder_path: ${{ github.event.inputs.folder_location }} #${{ steps.generate-files.outputs.pdf_path}} #${{ github.event.inputs.repository_url }}
