@@ -228,6 +228,10 @@ def Paper_cosine(author_keys, author_vectors, paper_vec, N=5, printer=True):
     for i in range(len(author_keys)): # For each author key
         idx = list(author_keys)[i] # Creates an index
         author_vec = author_vectors[idx] # Loads the vector for the given author key
+        print('paper vec')
+        print(np.array([paper_vec]))
+        print('author vec')
+        print(np.array([author_vec]))
     
         cos_sim = cosine_similarity(np.array([paper_vec]), np.array([author_vec]))[0,0] # Calculates the cosine similarity 
         # of the paper and the author of the index
